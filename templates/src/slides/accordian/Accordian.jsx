@@ -1,58 +1,54 @@
 import React, { useState } from 'react';
 import '../accordian/Accordian.css';
+import '../accordian/data.js';
+import data from '../accordian/data.js';
 
-const ButtonAccordian = ({name,description,isOpen,onClick})=>{
+const ButtonAccordian = ({ question, answer, isOpen, onClick }) => {
     return (
-        <div>
-            <button onClick={onClick}>{name}</button>
-            {isOpen && <div>{description}</div>}
-        </div>
+        <>
+            <button className={`${isOpen ? 'open' : 'not-open'}`} onClick={onClick}>{question}</button>
+            {isOpen && <div className='answer'>{answer}</div>}
+        </>
     );
 }
 
-const Accordian = () => { 
-    const [enableMultiple,setEnableMultiple]=useState(false);
-    const [openIndexs,setOpenIndexs]=useState([]);
-    const [openIndex,setOpenIndex]=useState(null);
-    const accordionData = [
-        { name: "First one", description: "Here is the description for the first one" },
-        { name: "Second one", description: "Here is the description for the 2nd one" },
-        { name: "Third one", description: "Here is the description for the 3rd one" },
-        { name: "Fourth one", description: "Here is the description for the 4th one" },
-    ];
-    function handleClick(index){
-        if(enableMultiple){
+const Accordian = () => {
+    const [enableMultiple, setEnableMultiple] = useState(false);
+    const [openIndexs, setOpenIndexs] = useState([]);
+    const [openIndex, setOpenIndex] = useState(null);
+
+    function handleClick(index) {
+        if (enableMultiple) {
             setOpenIndexs(
-                (pre)=>pre.includes(index)?pre.filter((i)=>i!==index):[...pre,index]
+                (pre) => pre.includes(index) ? pre.filter((i) => i !== index) : [...pre, index]
             );
         }
-        else{
-            setOpenIndex((pre)=>pre===index?[]:index);
+        else {
+            setOpenIndex((pre) => pre === index ? [] : index);
         }
     }
-    function handleEnableClick(){
-        if(enableMultiple){
+    function handleEnableClick() {
+        if (enableMultiple) {
             setOpenIndexs([]);
             setOpenIndex(null);
         }
         setEnableMultiple(!enableMultiple);
     }
     return (
-    <div className='main-container'>
-        <button onClick={()=>handleEnableClick()}>Enable Multiple</button>
-        {accordionData.map((item,index)=>(
-            <ButtonAccordian 
-            key={index} 
-            name={item.name} 
-            description={item.description}
-            isOpen={enableMultiple?openIndexs.includes(index):index===openIndex}
-            onClick={()=>handleClick(index)}
-            />
+        <div className='main-container'>
+            <button className={`enable ${enableMultiple ? 'red' : 'green'}`} onClick={() => handleEnableClick()}>Enable Multiple</button>
+            {data.map((item, index) => (
+                <ButtonAccordian
+                    key={item.id}
+                    question={item.question}
+                    answer={item.answer}
+                    isOpen={enableMultiple ? openIndexs.includes(index) : index === openIndex}
+                    onClick={() => handleClick(index)}
+                />
             ))
-        }    
-            
-    </div>
-  )
+            }
+        </div>
+    )
 }
 
 export default Accordian
