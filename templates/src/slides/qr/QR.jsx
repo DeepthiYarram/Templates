@@ -1,5 +1,5 @@
 import React from 'react'
-import imageQR from '../assets/QR.png';
+import imageQR from '../../assets/QR.png';
 import './QR.css';
 
 const QR = () => {
