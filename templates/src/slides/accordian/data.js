@@ -13,7 +13,7 @@ const data = [
     },
     {
       id  : '3',
-      question: "Accordion as a musical instrument",
+      question: "Accordion as a musical instrument?",
       answer:
         "The accordion is a musical instrument with a keyboard and bellows. It produces sound by air passing over reeds when the player expands or compresses the bellows, used in various music genres.",
     },
