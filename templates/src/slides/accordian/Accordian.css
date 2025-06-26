@@ -1,0 +1,41 @@
+
+.main-container {
+    min-height: 100vh;
+    min-width: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: beige;
+}
+
+.enable{
+    margin-bottom: 15px;
+}
+
+.red{
+    background-color: rgb(244, 71, 71);
+}
+
+.green{
+    background-color: rgb(68, 224, 68);
+}
+
+button{
+    padding: 5px;
+    margin: 15px;
+}
+
+.answer{
+    min-width: 100vh;
+    width: 50px;
+    padding: 10px;
+}
+
+.open{
+    background-color: aquamarine;
+}
+
+.not-open{
+    background-color: rgb(145, 157, 157);
+}
