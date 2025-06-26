@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
-import QR from './slides/qr/QR.jsx';
+import QR from './slides/random-color/RandomColor.jsx';
 
 function App() {
   return (
