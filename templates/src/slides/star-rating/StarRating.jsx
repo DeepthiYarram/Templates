@@ -17,7 +17,7 @@ const StarRating = () => {
                             key={index}
                             onClick={() => setRating(present)}
                             onMouseLeave={() => setHover(0)}
-                            onMouseEnter={() => setHover(present)}
+                            onMouseMove={() => setHover(present)}
                         >
                             <FaStar />
                         </span>)
