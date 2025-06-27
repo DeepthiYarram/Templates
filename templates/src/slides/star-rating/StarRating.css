@@ -1,0 +1,16 @@
+.main-container{
+    height: 100vh;
+    cursor: pointer;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.star{
+    color: grey;
+}
+
+.filled{
+    color:gold;
+}
