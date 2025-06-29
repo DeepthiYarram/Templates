@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../accordian/Accordian.css';
-import '../accordian/data.js';
-import data from '../accordian/data.js';
+import '../../assets/data.js';
+// import data from '../accordian/data.js';
 
 const ButtonAccordian = ({ question, answer, isOpen, onClick }) => {
     return (
